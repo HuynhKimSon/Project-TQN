@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vn.com.irtech.irbot.business.mapper.NhapXuatMapper">
+    
+    <resultMap type="NhapXuat" id="NhapXuatResult">
+        <result property="id"    column="id"    />
+        <result property="syncType"    column="sync_type"    />
+        <result property="type"    column="type"    />
+        <result property="mode"    column="mode"    />
+        <result property="auto"    column="auto"    />
+        <result property="json"    column="json"    />
+        <result property="voucherId"    column="voucher_id"    />
+        <result property="voucherNo"    column="voucher_no"    />
+        <result property="voucherNoGslct"    column="voucher_no_gslct"    />
+        <result property="voucherIndex"    column="voucher_index"    />
+        <result property="voucherType"    column="voucher_type"    />
+        <result property="voucherDate"    column="voucher_date"    />
+        <result property="voucherModifyDate"    column="voucher_modify_date"    />
+        <result property="productGroup"    column="product_group"    />
+        <result property="providerId"    column="provider_id"    />
+        <result property="providerName"    column="provider_name"    />
+        <result property="stockId"    column="stock_id"    />
+        <result property="reason"    column="reason"    />
+        <result property="description"    column="description"    />
+        <result property="importId"    column="import_id"    />
+        <result property="importNumberId"    column="import_number_id"    />
+        <result property="exportId"    column="export_id"    />
+        <result property="exportNumberId"    column="export_number_id"    />
+        <result property="processId"    column="process_id"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectNhapXuatVo">
+        select id, type, sync_type, mode, auto, json, voucher_id, voucher_no, voucher_no_gslct, voucher_index, voucher_type, voucher_date, voucher_modify_date, product_group, provider_id, provider_name, stock_id, reason, description, import_id, import_number_id, export_id, export_number_id, process_id, status, create_by, create_time, update_by, update_time from nhap_xuat
+    </sql>
+
+    <select id="selectNhapXuatList" parameterType="NhapXuat" resultMap="NhapXuatResult">
+        <include refid="selectNhapXuatVo"/>
+        <where>  
+            <if test="syncType != null "> and sync_type = #{syncType}</if>
+        	<if test="type != null "> and type = #{type}</if>
+            <if test="mode != null "> and mode = #{mode}</if>
+            <if test="auto != null  and auto != ''"> and auto = #{auto}</if>
+            <if test="json != null  and json != ''"> and json = #{json}</if>
+            <if test="voucherId != null "> and voucher_id = #{voucherId}</if>
+            <if test="voucherNo != null  and voucherNo != ''"> and voucher_no = #{voucherNo}</if>
+            <if test="voucherNoGslct != null  and voucherNoGslct != ''"> and voucher_no_gslct = #{voucherNoGslct}</if>
+            <if test="voucherIndex != null  and voucherIndex != ''"> and voucher_index = #{voucherIndex}</if>
+            <if test="voucherType != null  and voucherType != ''"> and voucher_type = #{voucherType}</if>
+            <if test="voucherDate != null "> and voucher_date = #{voucherDate}</if>
+            <if test="voucherModifyDate != null "> and voucher_modify_date = #{voucherModifyDate}</if>
+            <if test="productGroup != null  and productGroup != ''"> and product_group = #{productGroup}</if>
+            <if test="providerId != null  and providerId != ''"> and provider_id = #{providerId}</if>
+            <if test="providerName != null  and providerName != ''"> and provider_name like concat('%', #{providerName}, '%')</if>
+            <if test="stockId != null  and stockId != ''"> and stock_id = #{stockId}</if>
+            <if test="reason != null  and reason != ''"> and reason = #{reason}</if>
+            <if test="description != null  and description != ''"> and description = #{description}</if>
+            <if test="importId != null "> and import_id = #{importId}</if>
+            <if test="importNumberId != null  and importNumberId != ''"> and import_number_id = #{importNumberId}</if>
+            <if test="exportId != null "> and export_id = #{exportId}</if>
+            <if test="exportNumberId != null  and exportNumberId != ''"> and export_number_id = #{exportNumberId}</if>
+            <if test="processId != null "> and process_id = #{processId}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="params.beginTime != null and params.beginTime != ''">
+            	AND convert(varchar, create_time, 23) &gt;= #{params.beginTime}
+            </if>
+            <if test="params.endTime != null and params.endTime != ''">
+				AND convert(varchar, create_time, 23) &lt;= #{params.endTime}
+			</if>
+        </where>
+        <if test="params.orderAsc != null">
+        	ORDER BY create_time ASC
+        </if>
+        <if test="params.orderAsc == null">
+        	ORDER BY create_time DESC
+        </if>
+    </select>
+    
+    <select id="selectNhapXuatById" parameterType="Long" resultMap="NhapXuatResult">
+        <include refid="selectNhapXuatVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertNhapXuat" parameterType="NhapXuat" useGeneratedKeys="true" keyProperty="id">
+        insert into nhap_xuat
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="syncType != null">sync_type,</if>
+            <if test="type != null">type,</if>
+            <if test="mode != null">mode,</if>
+            <if test="auto != null">auto,</if>
+            <if test="json != null">json,</if>
+            <if test="voucherId != null">voucher_id,</if>
+            <if test="voucherNo != null">voucher_no,</if>
+            <if test="voucherNoGslct != null">voucher_no_gslct,</if>
+            <if test="voucherIndex != null">voucher_index,</if>
+            <if test="voucherType != null">voucher_type,</if>
+            <if test="voucherDate != null">voucher_date,</if>
+            <if test="voucherModifyDate != null">voucher_modify_date,</if>
+            <if test="productGroup != null">product_group,</if>
+            <if test="providerId != null">provider_id,</if>
+            <if test="providerName != null">provider_name,</if>
+            <if test="stockId != null">stock_id,</if>
+            <if test="reason != null">reason,</if>
+            <if test="description != null">description,</if>
+            <if test="importId != null">import_id,</if>
+            <if test="importNumberId != null">import_number_id,</if>
+            <if test="exportId != null">export_id,</if>
+            <if test="exportNumberId != null">export_number_id,</if>
+            <if test="processId != null">process_id,</if>
+            <if test="status != null">status,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            create_time
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="syncType != null">#{syncType},</if>
+            <if test="type != null">#{type},</if>
+            <if test="mode != null">#{mode},</if>
+            <if test="auto != null">#{auto},</if>
+            <if test="json != null">#{json},</if>
+            <if test="voucherId != null">#{voucherId},</if>
+            <if test="voucherNo != null">#{voucherNo},</if>
+            <if test="voucherNoGslct != null">#{voucherNoGslct},</if>
+            <if test="voucherIndex != null">#{voucherIndex},</if>
+            <if test="voucherType != null">#{voucherType},</if>
+            <if test="voucherDate != null">#{voucherDate},</if>
+            <if test="voucherModifyDate != null">#{voucherModifyDate},</if>
+            <if test="productGroup != null">#{productGroup},</if>
+            <if test="providerId != null">#{providerId},</if>
+            <if test="providerName != null">#{providerName},</if>
+            <if test="stockId != null">#{stockId},</if>
+            <if test="reason != null">#{reason},</if>
+            <if test="description != null">#{description},</if>
+            <if test="importId != null">#{importId},</if>
+            <if test="importNumberId != null">#{importNumberId},</if>
+            <if test="exportId != null">#{exportId},</if>
+            <if test="exportNumberId != null">#{exportNumberId},</if>
+            <if test="processId != null">#{processId},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            getdate()
+         </trim>
+    </insert>
+
+    <update id="updateNhapXuat" parameterType="NhapXuat">
+        update nhap_xuat
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="syncType != null">sync_type = #{syncType},</if>
+        	<if test="type != null">type = #{type},</if>
+            <if test="mode != null">mode = #{mode},</if>
+            <if test="auto != null">auto = #{auto},</if>
+            <if test="json != null">json = #{json},</if>
+            <if test="voucherId != null">voucher_id = #{voucherId},</if>
+            <if test="voucherNo != null">voucher_no = #{voucherNo},</if>
+            <if test="voucherNoGslct != null">voucher_no_gslct = #{voucherNoGslct},</if>
+            <if test="voucherIndex != null">voucher_index = #{voucherIndex},</if>
+            <if test="voucherType != null">voucher_type = #{voucherType},</if>
+            <if test="voucherDate != null">voucher_date = #{voucherDate},</if>
+            <if test="voucherModifyDate != null">voucher_modify_date = #{voucherModifyDate},</if>
+            <if test="productGroup != null">product_group = #{productGroup},</if>
+            <if test="providerId != null">provider_id = #{providerId},</if>
+            <if test="providerName != null">provider_name = #{providerName},</if>
+            <if test="stockId != null">stock_id = #{stockId},</if>
+            <if test="reason != null">reason = #{reason},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="importId != null">import_id = #{importId},</if>
+            <if test="importNumberId != null">import_number_id = #{importNumberId},</if>
+            <if test="exportId != null">export_id = #{exportId},</if>
+            <if test="exportNumberId != null">export_number_id = #{exportNumberId},</if>
+            <if test="processId != null">process_id = #{processId},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            update_time = getdate()
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteNhapXuatById" parameterType="Long">
+        delete from nhap_xuat where id = #{id}
+    </delete>
+
+    <delete id="deleteNhapXuatByIds" parameterType="String">
+        delete from nhap_xuat where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <select id="countByStatuses" resultType="Integer">
+    	select count(*) from nhap_xuat where sync_type = #{syncType} AND status in
+    	<foreach item="status" collection="statuses" open="(" separator="," close=")">
+            #{status}
+        </foreach>	
+        <if test="fromDate != null and toDate != null">
+        	AND (create_time BETWEEN #{fromDate} AND #{toDate})
+        </if>
+    </select>
+</mapper>

@@ -1,0 +1,56 @@
+﻿"dict_code","dict_sort","dict_label","dict_value","dict_type","css_class","list_class","is_default","status","create_by","create_time","update_by","update_time","remark"
+1,1,"Nam","0","sys_user_sex","","","Y","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 4:20:45 PM,""
+2,2,"Nữ","1","sys_user_sex","","","N","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 4:21:01 PM,""
+3,3,"Không xác định","2","sys_user_sex","","","N","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 4:21:28 PM,""
+4,1,"hiển thị","0","sys_show_hide","","primary","Y","0","admin",2/12/2021 2:06:14 PM,"admin",4/12/2021 8:55:10 AM,"Hi?n th?"
+5,2,"ẩn","1","sys_show_hide","","danger","N","0","admin",2/12/2021 2:06:14 PM,"admin",4/12/2021 8:55:17 AM,"Không hi?n th?"
+6,1,"Normal","0","sys_normal_disable","","primary","Y","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 4:26:12 PM,""
+7,2,"Disable","1","sys_normal_disable","","danger","N","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 4:25:25 PM,""
+8,1,"normal","0","sys_job_status","","primary","Y","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 5:09:36 PM,""
+9,2,"pause","1","sys_job_status","","danger","N","0","admin",2/12/2021 2:06:14 PM,"admin",3/12/2021 5:09:56 PM,""
+10,1,"default","DEFAULT","sys_job_group","","","Y","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:10:53 PM,""
+11,2,"system","SYSTEM","sys_job_group","","","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:11:03 PM,"????"
+12,1,"Yes","Y","sys_yes_no","","primary","Y","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:12:18 PM,""
+13,2,"No","N","sys_yes_no","","danger","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:12:26 PM,""
+14,1,"Cảnh báo","1","sys_notice_type","","warning","Y","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:14:41 PM,""
+15,2,"Thông báo","2","sys_notice_type","","success","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:14:48 PM,"??"
+16,1,"thông thường","0","sys_notice_status","","primary","Y","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:16:02 PM,""
+17,2,"đóng","1","sys_notice_status","","danger","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:16:11 PM,""
+18,99,"Khác","0","sys_oper_type","","info","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:20:24 PM,""
+19,1,"Thêm","1","sys_oper_type","","info","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:18:03 PM,""
+20,2,"Sửa","2","sys_oper_type","","info","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:18:12 PM,""
+21,3,"Xóa","3","sys_oper_type","","danger","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:18:25 PM,""
+22,4,"Authorization","4","sys_oper_type","","primary","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:18:40 PM,""
+23,5,"Export","5","sys_oper_type","","warning","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:18:54 PM,""
+24,6,"Import","6","sys_oper_type","","warning","N","0","admin",2/12/2021 2:06:15 PM,"admin",3/12/2021 5:19:09 PM,""
+25,7,"Cancel","7","sys_oper_type","","danger","N","0","admin",2/12/2021 2:06:16 PM,"admin",3/12/2021 5:19:27 PM,""
+26,8,"Gen code","8","sys_oper_type","","warning","N","0","admin",2/12/2021 2:06:16 PM,"admin",3/12/2021 5:19:47 PM,""
+27,9,"Clear data","9","sys_oper_type","","danger","N","0","admin",2/12/2021 2:06:16 PM,"admin",3/12/2021 5:20:11 PM,""
+28,1,"Thành công","0","sys_common_status","","primary","N","0","admin",2/12/2021 2:06:16 PM,"admin",3/12/2021 5:25:30 PM,""
+29,2,"Thất bại","1","sys_common_status","","danger","N","0","admin",2/12/2021 2:06:16 PM,"admin",3/12/2021 5:25:43 PM,""
+30,0,"Kho100TTMD","100TTMD","business_stock_type",,,"Y","0","admin",4/29/2022 2:37:08 PM,"",,
+31,1,"KhoVuMon","KVM","business_stock_type",,,"Y","0","admin",4/29/2022 2:37:25 PM,"",,
+679,1,"100","CTCP Dược phẩm Quảng Bình","business_unit_code",,,"Y","0","admin",7/3/2022 2:48:37 PM.820,"",,
+680,2,"200","CN DPQB tại huyện Lệ Thủy","business_unit_code","","","Y","0","admin",7/3/2022 2:49:33 PM.597,"admin",7/3/2022 2:50:27 PM.140,""
+681,3,"300","CN DPQB tại huyện Quảng Ninh","business_unit_code",,,"Y","0","admin",7/3/2022 2:50:14 PM.757,"",,
+682,4,"400","CN DPQB tại TP Đồng Hới","business_unit_code",,,"Y","0","admin",7/3/2022 2:51:06 PM.640,"",,
+683,5,"500","CN DPQB tại huyện Bố Trạch","business_unit_code",,,"Y","0","admin",7/3/2022 2:51:21 PM.970,"",,
+684,6,"600","CN DPQB tại huyện Ba Đồn","business_unit_code",,,"Y","0","admin",7/3/2022 2:51:53 PM.923,"",,
+685,7,"700","CN DPQB tại huyện Tuyên Hóa","business_unit_code",,,"Y","0","admin",7/3/2022 2:52:08 PM.387,"",,
+686,8,"800","CN DPQB tại huyện Minh Hóa","business_unit_code",,,"Y","0","admin",7/3/2022 2:52:24 PM.843,"",,
+687,1,"100","HD22QB","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:55:14 PM.260,"",,
+688,2,"200","HD22LT","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:55:25 PM.587,"",,
+689,3,"300","HD22QN","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:55:36 PM.393,"",,
+690,4,"400","HD22DH","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:55:51 PM.843,"",,
+691,6,"600","HD22BD","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:56:06 PM.273,"",,
+692,5,"500","HD22BT","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:56:22 PM.353,"",,
+693,7,"700","HD22TH","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:56:36 PM.313,"",,
+694,8,"800","HD22MH","business_unit_quyen_hoa_don",,,"Y","0","admin",7/3/2022 2:56:48 PM.970,"",,
+695,1,"100","PXK22QB","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:57:48 PM.163,"",,
+696,2,"200","PXK22LT","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:57:57 PM.773,"",,
+697,3,"300","PXK22QN","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:58:08 PM.463,"",,
+698,4,"400","PXK22DH","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:58:22 PM.777,"",,
+699,5,"500","PXK22BT","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:58:34 PM.390,"",,
+700,6,"600","PXK22BD","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:58:46 PM.363,"",,
+701,7,"700","PXK22TH","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:59:00 PM.780,"",,
+702,8,"800","PXK22MH","business_unit_quyen_xuat_kho",,,"Y","0","admin",7/3/2022 2:59:11 PM.933,"",,

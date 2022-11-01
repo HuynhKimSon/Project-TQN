@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:include="include :: header('Detail Invoice')" />
+    <th:block th:include="include :: datetimepicker-css" />
+  </head>
+
+  <body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+      <form
+        class="form-horizontal m"
+        id="formDetail"
+        name="formDetail"
+        th:object="${nhapxuat}"
+      >
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Loại hóa đơn:</label>
+              <div class="col-sm-8" th:switch="${nhapxuat.type}">
+                <div
+                  th:case="1"
+                  class="label label-primary"
+                  style="vertical-align: bottom"
+                >
+                  Nhập than NK - Từ công ty khác
+                </div>
+                <div
+                  th:case="2"
+                  class="label label-primary"
+                  style="vertical-align: bottom"
+                >
+                  Nhập than sạch - Từ công ty khác
+                </div>
+                <div
+                  th:case="3"
+                  class="label label-primary"
+                  style="vertical-align: bottom"
+                >
+                  Nhập than sạch - Nội bộ
+                </div>
+                <div
+                  th:case="4"
+                  class="label label-success"
+                  style="vertical-align: bottom"
+                >
+                  Xuất than sạch - Đến công ty khác
+                </div>
+                <div
+                  th:case="5"
+                  class="label label-success"
+                  style="vertical-align: bottom"
+                >
+                  Xuất than NK - Nội bộ
+                </div>
+                <div
+                  th:case="6"
+                  class="label label-success"
+                  style="vertical-align: bottom"
+                >
+                  Xuất than sạch - Nội bộ
+                </div>
+                <div
+                  th:case="7"
+                  class="label label-warning"
+                  style="vertical-align: bottom"
+                >
+                  Phiếu pha trộn
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Mã phiếu</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="voucherNo"
+                  id="voucherNo"
+                  th:field="*{voucherNo}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Số phiếu:</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="voucherId"
+                  id="voucherId"
+                  th:field="*{voucherId}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Ngày tạo phiếu</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control time-input"
+                  type="text"
+                  name="voucherDate"
+                  id="voucherDate"
+                  th:value="${#dates.format(nhapxuat.voucherDate, 'yyyy-MM-dd HH:mm:ss')}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Ngày cập nhật</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control time-input"
+                  type="text"
+                  name="voucherModifyDate"
+                  id="voucherModifyDate"
+                  th:value="${#dates.format(nhapxuat.voucherModifyDate, 'yyyy-MM-dd HH:mm:ss')}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Mã sản phẩm:</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="productGroup"
+                  id="productGroup"
+                  th:field="*{productGroup}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Mã KH/NCC</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="providerId"
+                  id="providerId"
+                  th:field="*{providerId}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Tên KH/NCC</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="providerName"
+                  id="providerName"
+                  th:field="*{providerName}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Mã kho</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="stockId"
+                  id="stockId"
+                  th:field="*{stockId}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Lý do</label>
+              <div class="col-sm-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="reason"
+                  id="reason"
+                  th:field="*{reason}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Diễn giải</label>
+              <div class="col-sm-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="description"
+                  id="description"
+                  th:field="*{description}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-sm-12" id="chi-tiet-nhap"><label class="col-sm-2 control-label" style="font-weight: bold;">Chi tiết nhập</label></div>
+        <div class="col-sm-12">
+          <table id="bootstrap-table-import"></table>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-12" id="chi-tiet-xuat"><label class="col-sm-2 control-label" style="font-weight: bold;">Chi tiết xuất</label></div>
+        <div class="col-sm-12">
+          <table id="bootstrap-table-export"></table>
+        </div>
+      </div>
+    </div>
+
+    <th:block th:include="include :: footer" />
+    <th:block th:include="include :: datetimepicker-js" />
+    <script type="text/javascript" th:inline="javascript">
+      var entity = /*[[${entity}]]*/;
+      var importDetails = /*[[${importDetails}]]*/;
+      var exportDetails = /*[[${exportDetails}]]*/;
+    </script>
+    <script th:src="@{/app/js/business/process-gslct/detail.js}"></script>
+  </body>
+</html>

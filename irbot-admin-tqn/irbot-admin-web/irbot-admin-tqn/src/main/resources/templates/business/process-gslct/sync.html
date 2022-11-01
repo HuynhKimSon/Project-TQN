@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:include="include :: header('Đồng bộ dữ liệu F2W')" />
+    <style th:inline="css">
+      input[type=checkbox] {
+        margin: 9px 0 0;
+      }
+    </style>
+  </head>
+
+  <body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+      <form
+        class="form-horizontal m"
+        id="formSyncInvoice"
+        name="formSyncInvoice"
+      >
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-xs-6 control-label is-required"
+                >Từ ngày：</label
+              >
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  class="time-input"
+                  placeholder="xin vui lòng chọn"
+                  name="fromDate"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-xs-6 control-label is-required"
+                >Đến ngày：</label
+              >
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  class="time-input"
+                  placeholder="xin vui lòng chọn"
+                  name="toDate"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-xs-6 control-label">Loại phiếu：</label>
+              <div class="col-xs-6">
+                <select name="serviceType">
+                  <option selected value="">Tất cả</option>
+                  <option value="1">Nhập kho</option>
+                  <option value="2">Xuất kho</option>
+                  <option value="3">Pha trộn</option>
+              </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-xs-6 control-label">Tự động làm lệnh：</label>
+              <div class="col-xs-6">
+                <input class="form-check-input" type="checkbox" id="sendRobot" name="sendRobot">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div> -->
+      </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script type="text/javascript" th:inline="javascript">
+    </script>
+    <script th:src="@{/app/js/business/process-gslct/sync.js}"></script>
+  </body>
+</html>

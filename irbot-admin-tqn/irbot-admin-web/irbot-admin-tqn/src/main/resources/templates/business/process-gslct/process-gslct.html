@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('Quan ly hoa don Danh sách')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+            <div class="col-sm-12 search-collapse">
+                <form id="formId">
+                    <div class="select-list">
+                        <ul>
+                            <li>
+                                <label>Mã phiếu：</label>
+                                <input type="text" name="voucherNo"/>
+                            </li>
+                            <li>
+                                <label>Loại phiếu：</label>
+                                <select name="type">
+                                    <option value="">Tất cả</option>
+                                    <option value="1">Nhập than NK - Từ công ty khác</option>
+                                    <option value="2">Nhập than sạch - Từ công ty khác</option>
+                                    <option value="3">Nhập than sạch - Nội bộ</option>
+                                    <option value="4">Xuất than sạch - Đến công ty khác</option>
+                                    <option value="5">Xuất than NK - Nội bộ</option>
+                                    <option value="6">Xuất than sạch - Nội bộ</option>
+                                    <option value="7">Phiếu pha trộn</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>Trạng thái：</label>
+                                <select name="status">
+                                    <option selected value="">Tất cả</option>
+                                    <option value="0">Chưa làm </option>
+                                    <option value="1">Đã gửi</option>
+                                    <option value="2">Đang làm </option>
+                                    <option value="3">Thất bại </option>
+                                    <option value="4">Thành công</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>Thời gian nhập liệu：</label>
+                                <input type="text" class="time-input" placeholder="xin vui lòng chọn" name="params[beginTime]"/>
+                                <span> - </span>
+                                <input type="text" class="time-input" placeholder="xin vui lòng chọn" name="params[endTime]"/>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;Tìm kiếm</a>
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;Làm mới</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-primary single disabled" onclick="$.operate.detail()">
+                    <i class="fa fa-edit"></i> Chi tiết
+                </a>
+                <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
+                    <i class="fa fa-remove"></i> Xóa
+                </a>
+                <a class="btn btn-success" onclick="sync()">
+                    <i class="fa fa-refresh"></i> Đồng bộ dữ liệu
+                </a>
+                <a class="btn btn-success multiple disabled" onclick="retry()">
+                    <i class="fa fa-repeat"></i> Robot làm lại
+                </a>
+                <a class="btn btn-warning multiple disabled" onclick="updateStatus()">
+                    <i class="fa fa-check"></i> Cập nhật trạng thái
+                </a>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:src="@{/app/js/business/process-gslct/process-gslct.js}"></script>
+    <script th:inline="javascript">
+    </script>
+</body>
+</html>

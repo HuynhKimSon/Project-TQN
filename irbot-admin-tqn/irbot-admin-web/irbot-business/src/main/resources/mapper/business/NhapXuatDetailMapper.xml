@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vn.com.irtech.irbot.business.mapper.NhapXuatDetailMapper">
+    
+    <resultMap type="NhapXuatDetail" id="NhapXuatDetailResult">
+        <result property="id"    column="id"    />
+        <result property="nhapXuatId"    column="nhap_xuat_id"    />
+        <result property="voucherId"    column="voucher_id"    />
+        <result property="detailId"    column="detail_id"    />
+        <result property="productId"    column="product_id"    />
+        <result property="productName"    column="product_name"    />
+        <result property="stockId"    column="stock_id"    />
+        <result property="unitId"    column="unit_id"    />
+        <result property="akRate"    column="ak_rate"    />
+        <result property="wtpRate"    column="wtp_rate"    />
+        <result property="convertQuantity"    column="convert_quantity"    />
+        <result property="realQuantity"    column="real_quantity"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectNhapXuatDetailVo">
+        select id, nhap_xuat_id, voucher_id, detail_id, product_id, product_name, stock_id, unit_id, ak_rate, wtp_rate, convert_quantity, real_quantity, create_by, create_time, update_by, update_time from nhap_xuat_detail
+    </sql>
+
+    <select id="selectNhapXuatDetailList" parameterType="NhapXuatDetail" resultMap="NhapXuatDetailResult">
+        <include refid="selectNhapXuatDetailVo"/>
+        <where>  
+            <if test="nhapXuatId != null "> and nhap_xuat_id = #{nhapXuatId}</if>
+            <if test="voucherId != null "> and voucher_id = #{voucherId}</if>
+            <if test="detailId != null "> and detail_id = #{detailId}</if>
+            <if test="productId != null  and productId != ''"> and product_id = #{productId}</if>
+            <if test="productName != null  and productName != ''"> and product_name like concat('%', #{productName}, '%')</if>
+            <if test="stockId != null  and stockId != ''"> and stock_id = #{stockId}</if>
+            <if test="unitId != null  and unitId != ''"> and unit_id = #{unitId}</if>
+            <if test="akRate != null "> and ak_rate = #{akRate}</if>
+            <if test="wtpRate != null "> and wtp_rate = #{wtpRate}</if>
+            <if test="convertQuantity != null  and convertQuantity != ''"> and convert_quantity = #{convertQuantity}</if>
+            <if test="realQuantity != null "> and real_quantity = #{realQuantity}</if>
+        </where>
+    </select>
+    
+    <select id="selectNhapXuatDetailById" parameterType="Long" resultMap="NhapXuatDetailResult">
+        <include refid="selectNhapXuatDetailVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertNhapXuatDetail" parameterType="NhapXuatDetail" useGeneratedKeys="true" keyProperty="id">
+        insert into nhap_xuat_detail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="nhapXuatId != null">nhap_xuat_id,</if>
+            <if test="voucherId != null">voucher_id,</if>
+            <if test="detailId != null">detail_id,</if>
+            <if test="productId != null">product_id,</if>
+            <if test="productName != null">product_name,</if>
+            <if test="stockId != null">stock_id,</if>
+            <if test="unitId != null">unit_id,</if>
+            <if test="akRate != null">ak_rate,</if>
+            <if test="wtpRate != null">wtp_rate,</if>
+            <if test="convertQuantity != null">convert_quantity,</if>
+            <if test="realQuantity != null">real_quantity,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            create_time
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="nhapXuatId != null">#{nhapXuatId},</if>
+            <if test="voucherId != null">#{voucherId},</if>
+            <if test="detailId != null">#{detailId},</if>
+            <if test="productId != null">#{productId},</if>
+            <if test="productName != null">#{productName},</if>
+            <if test="stockId != null">#{stockId},</if>
+            <if test="unitId != null">#{unitId},</if>
+            <if test="akRate != null">#{akRate},</if>
+            <if test="wtpRate != null">#{wtpRate},</if>
+            <if test="convertQuantity != null">#{convertQuantity},</if>
+            <if test="realQuantity != null">#{realQuantity},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            getdate()
+         </trim>
+    </insert>
+
+    <update id="updateNhapXuatDetail" parameterType="NhapXuatDetail">
+        update nhap_xuat_detail
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="nhapXuatId != null">nhap_xuat_id = #{nhapXuatId},</if>
+            <if test="voucherId != null">voucher_id = #{voucherId},</if>
+            <if test="detailId != null">detail_id = #{detailId},</if>
+            <if test="productId != null">product_id = #{productId},</if>
+            <if test="productName != null">product_name = #{productName},</if>
+            <if test="stockId != null">stock_id = #{stockId},</if>
+            <if test="unitId != null">unit_id = #{unitId},</if>
+            <if test="akRate != null">ak_rate = #{akRate},</if>
+            <if test="wtpRate != null">wtp_rate = #{wtpRate},</if>
+            <if test="convertQuantity != null">convert_quantity = #{convertQuantity},</if>
+            <if test="realQuantity != null">real_quantity = #{realQuantity},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            update_time = getdate()
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteNhapXuatDetailById" parameterType="Long">
+        delete from nhap_xuat_detail where id = #{id}
+    </delete>
+
+    <delete id="deleteNhapXuatDetailByIds" parameterType="String">
+        delete from nhap_xuat_detail where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <delete id="deleteNhapXuatDetailByNhapXuatIds" parameterType="String">
+    	delete from nhap_xuat_detail where nhap_xuat_id in
+ 			<foreach collection="array" item="nhapXuatId" open="(" separator="," close=")">
+ 				#{nhapXuatId}
+      </foreach> 
+    </delete>
+</mapper>

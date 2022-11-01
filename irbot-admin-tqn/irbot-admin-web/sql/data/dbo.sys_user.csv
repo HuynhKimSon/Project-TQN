@@ -1,0 +1,4 @@
+﻿"user_id","dept_id","login_name","user_name","user_type","email","phonenumber","sex","avatar","password","salt","status","del_flag","login_ip","login_date","pwd_update_date","create_by","create_time","update_by","update_time","remark"
+1,200,"admin","Admin","00","admin@gmail.com","0123456789","0","","29c67a30398638269fe600f73a054934","111111","0","0","127.0.0.1",8/2/2022 8:37:37 AM.117,12/2/2021 2:06:02 PM,"admin",12/2/2021 2:06:02 PM,"",8/2/2022 8:37:35 AM.973,"???"
+4,201,"cn1","Chi Nhanh 1","00","","","0","","71e3a72265620d35fa61affef2980107","880cd0","0","2","127.0.0.1",7/3/2022 3:17:56 PM.817,,"admin",6/26/2022 10:25:27 PM.543,"",7/3/2022 3:17:58 PM.773,
+5,202,"lethuy","CN Lệ Thuỷ","00","","","0","","7f8b3c42827b36abdbfb2962f075970b","d189a3","0","0","192.168.1.81",7/27/2022 11:24:48 AM.307,,"admin",7/7/2022 2:16:33 PM.623,"admin",7/27/2022 11:24:46 AM.923,""
